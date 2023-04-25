@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import css from './Profile.module.css'
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
     const userStates = [
@@ -16,24 +17,24 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
         }
     ];
     return (
-        <div className="profile">
-  <div className="description">
+<div className={css.profile}>
+  <div className={css.description}>
     <img
       src={avatar}
       alt="User avatar"
-      className="avatar"
+      className={css.avatar}
     />
-    <p className="name">{username}</p>
-    <p className="tag">@{tag}</p>
-    <p className="location">{location}</p>
+    <p className={css.name}>{username}</p>
+    <p className={css.tag}>@{tag}</p>
+    <p className={css.location}>{location}</p>
   </div>
 
-  <ul className="stats">
+  <ul className={css.stats}>
     {userStates.map(({ label, quantity })  =>
     <li key={label}>
                         
-    <span className="label">{label}</span>
-    <span className="quantity">{quantity}</span>
+    <span className={css.label}>{label}</span>
+    <span className={css.quantity}>{quantity}</span>
     </li>)}
   </ul>
 </div>
